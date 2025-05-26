@@ -1,0 +1,53 @@
+#Crea una función llamada numero_mas_frecuente(lista) que reciba una lista de
+#números enteros y devuelva el número que más veces se repite. Si hay más de uno con la
+#misma frecuencia, devuelve el menor de ellos.
+
+
+def numero_mas_frecuente(lista):
+    # Contador de frecuencias
+    frecuencia = {}
+    
+    for num in lista:
+        if num in frecuencia:
+            frecuencia[num] += 1
+        else:
+            frecuencia[num] = 1
+    
+    # Determinar el número más frecuente y manejar empates
+    max_frecuencia = max(frecuencia.values())  # Obtiene la máxima frecuencia
+    candidatos = [num for num in frecuencia if frecuencia[num] == max_frecuencia]  # Filtra los números con esa frecuencia
+    
+    return min(candidatos)  # Devuelve el menor en caso de empate
+
+# Pruebas
+print(numero_mas_frecuente([1, 3, 1, 3, 2, 1]))  # Esperado: 1
+print(numero_mas_frecuente([4, 4, 5, 5]))        # Esperado: 4
+# Caso 1: Lista vacía (debe manejarse sin error)
+print(numero_mas_frecuente([0]))  # ¿Qué debería retornar en este caso? Quizás None o un mensaje de error.
+
+# Caso 2: Un solo elemento en la lista
+print(numero_mas_frecuente([7]))  # Esperado: 7
+
+# Caso 3: Todos los elementos son diferentes
+print(numero_mas_frecuente([8, 5, 3, 9, 2]))  # Esperado: El menor número (porque todos tienen frecuencia 1)
+
+# Caso 4: Números negativos y positivos mezclados
+print(numero_mas_frecuente([-1, -3, -1, 2, 2, -3]))  # Esperado: -3 (si hay empate, devuelve el menor)
+
+# Caso 5: Todos los números son iguales
+print(numero_mas_frecuente([4, 4, 4, 4]))  # Esperado: 4
+
+# Caso 6: Empate con valores cercanos
+print(numero_mas_frecuente([10, 20, 10, 20, 30]))  # Esperado: 10
+
+# Caso 7: Valores en gran cantidad pero con empate claro
+print(numero_mas_frecuente([1] * 10 + [2] * 10 + [3] * 5))  # Esperado: 1 (porque es el menor en el empate)
+
+# Caso 8: Entrada con números en desorden
+print(numero_mas_frecuente([9, 3, 9, 2, 3, 2, 9]))  # Esperado: 9 (porque es el más frecuente)
+
+# Caso 9: Entrada con números grandes
+print(numero_mas_frecuente([1000000, 999999, 1000000, 999999]))  # Esperado: 999999
+
+# Caso 10: Lista con ceros y negativos
+print(numero_mas_frecuente([0, -20, 0, -20, -1, -1]))  # Esperado: -1
