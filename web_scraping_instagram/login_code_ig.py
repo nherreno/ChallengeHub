@@ -11,7 +11,7 @@ from selenium.webdriver.support import expected_conditions as EC
 # Cargar variables de entorno
 load_dotenv()
 
-USERNAME = "nico.proyecx6@gmail.com"  # Reemplaza con tu nombre de usuario posdata no pude automatizar esta parte 
+USERNAME = "miusuario@gmail.com"  # Reemplaza con tu nombre de usuario posdata no pude automatizar esta parte 
 PASSWORD = os.getenv('PASSWORD')
 
 # Ruta correcta del chromedriver
