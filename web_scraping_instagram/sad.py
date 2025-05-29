@@ -1,3 +1,41 @@
+# Ideally, we would use Instagram's official API for authentication and data retrieval.
+# However, due to technical constraints (such as API access limitations), we are using Selenium 
+# to automate the login process and extract relevant information.
+#
+# IMPORTANT: To ensure security and avoid exposing credentials in the code, you must create a 
+# `.env` file in the project directory with the following content:
+#
+# USERNAME="your_instagram_username"
+# PASSWORD="your_instagram_password"
+#
+# This ensures that sensitive information is securely managed and not hardcoded into the script.
+#
+# If the login process fails or the script is not retrieving data, double-check that your `.env` 
+# file is correctly formatted and accessible.
+#
+# ⚠️ NOTE: If your account has two-step verification enabled, the script **cannot bypass this security measure automatically**.
+# You will need to manually enter the verification code when prompted and then press **Enter** to continue.
+#
+# ----------------------------------------------------------------------------------------------
+#
+# Idealmente, deberíamos usar la API oficial de Instagram para la autenticación y recuperación de datos.
+# Sin embargo, debido a limitaciones técnicas (como restricciones de acceso a la API), estamos utilizando Selenium 
+# para automatizar el proceso de inicio de sesión y extraer información relevante.
+#
+# IMPORTANTE: Para garantizar la seguridad y evitar exponer credenciales en el código, debes crear un archivo 
+# `.env` en el directorio del proyecto con el siguiente contenido:
+#
+# USERNAME="tu_usuario_de_instagram"
+# PASSWORD="tu_contraseña_de_instagram"
+#
+# Esto asegura que la información sensible se maneje de manera segura y no se codifique directamente en el script.
+#
+# Si el proceso de inicio de sesión falla o el script no está recuperando datos, verifica que tu archivo `.env`
+# esté correctamente formateado y accesible.
+#
+# ⚠️ NOTA: Si tu cuenta tiene activada la verificación en dos pasos, el script **no puede evitar esta medida de seguridad automáticamente**.
+# Tendrás que ingresar manualmente el código de verificación cuando se solicite y luego presionar **Enter** para continuar.
+
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
