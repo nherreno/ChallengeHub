@@ -406,7 +406,6 @@ def cargar_seguidores_completo(driver, usuario, limite_max=2000, max_intentos_ca
                 sleep(random.uniform(5, 8))
                 continue
     
-<<<<<<< HEAD
     # Si llegamos aquí, todos los intentos fallaron
     print(f"❌ No se pudo cargar seguidores después de {max_intentos_carga} intentos")
     return set()
@@ -572,13 +571,3 @@ sleep(30)
 # Cerrar el navegador
 print("🔚 Cerrando navegador...")
 driver.quit()
-=======
-    # Mostrar algunos ejemplos
-    for i, follower in enumerate(followers[:3]):
-        print(f"\n👤 Seguidor {i+1}:")
-        print(f"  Username: {follower['username']}")
-        print(f"  Nombre: {follower['full_name']}")
-        print(f"  Verificado: {follower['is_verified']}")
-        print(f"  Privado: {follower['is_private']}")
-        
->>>>>>> 6074e1b2e046e5c82071d218340af0060e8be4dd
